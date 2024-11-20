@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jamie\\source\\repos\\RedBadgerForms\\RedBadgerForms\\RedBadgerForms.csproj": {}
+    "C:\\Users\\Jamie\\Desktop\\RedBadgerForms\\RedBadgerForms\\RedBadgerForms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jamie\\source\\repos\\RedBadgerForms\\RedBadgerForms\\RedBadgerForms.csproj": {
+    "C:\\Users\\Jamie\\Desktop\\RedBadgerForms\\RedBadgerForms\\RedBadgerForms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jamie\\source\\repos\\RedBadgerForms\\RedBadgerForms\\RedBadgerForms.csproj",
+        "projectUniqueName": "C:\\Users\\Jamie\\Desktop\\RedBadgerForms\\RedBadgerForms\\RedBadgerForms.csproj",
         "projectName": "RedBadgerForms",
-        "projectPath": "C:\\Users\\Jamie\\source\\repos\\RedBadgerForms\\RedBadgerForms\\RedBadgerForms.csproj",
+        "projectPath": "C:\\Users\\Jamie\\Desktop\\RedBadgerForms\\RedBadgerForms\\RedBadgerForms.csproj",
         "packagesPath": "C:\\Users\\Jamie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jamie\\source\\repos\\RedBadgerForms\\RedBadgerForms\\obj\\",
+        "outputPath": "C:\\Users\\Jamie\\Desktop\\RedBadgerForms\\RedBadgerForms\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jamie\\AppData\\Roaming\\NuGet\\NuGet.Config",

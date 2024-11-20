@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RedBadgerForms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb349f624a82c514314ef3cc2d0ba81c1ecad874")]
 [assembly: System.Reflection.AssemblyProductAttribute("RedBadgerForms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RedBadgerForms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
