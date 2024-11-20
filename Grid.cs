@@ -18,8 +18,6 @@ namespace RedBadgerForms
             int startingYLocation = 500;
             int currentXLocaiton = startingXLocation;
             int currentYLocaiton = startingYLocation;
-       
-            int elementCount = 0;
             
             for (int i = 0; i < x; i++) // x = 5
             {
@@ -36,7 +34,6 @@ namespace RedBadgerForms
                     gridElement.Location = new Point(currentXLocaiton, currentYLocaiton);
                     form.Controls.Add(gridElement);
                     currentXLocaiton += gridElementSize;
-                    elementCount += 1;
                 }
             }
         }
