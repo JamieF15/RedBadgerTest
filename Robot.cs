@@ -65,7 +65,7 @@ namespace RedBadgerForms
             this.lastCoordinate = coordinates;
             switch (orientation.ToString().ToUpper())
             {
-                case "N": //works
+                case "N":
                     nextCoordinate = new Point(coordinates.X, coordinates.Y + 1);
                     if (nextCoordinate.Y > Grid.gridElements.GetLength(1) - 1)
                     {
@@ -81,7 +81,7 @@ namespace RedBadgerForms
                     this.SetCoordinates(nextCoordinate);
                     break;
 
-                case "E": //works
+                case "E":
                     nextCoordinate = new Point(coordinates.X, coordinates.Y + 1);
                     if (nextCoordinate.Y > Grid.gridElements.GetLength(1) - 1)
                     {
