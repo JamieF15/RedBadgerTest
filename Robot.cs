@@ -13,13 +13,24 @@ namespace RedBadgerForms
         char orientation;
         private Point coordinates;
         private Point lastCoordinate;
+        private bool isLost;
         public Robot(char orientation, Point coordinates)
         {
             this.orientation = orientation;
             this.coordinates = coordinates;
             lastCoordinate = coordinates;
+            isLost = false;
         }
 
+        public void SetisLost(bool isLost)
+        {
+            this.isLost = isLost;
+        }
+
+        public bool GetIsLost()
+        {
+            return isLost;
+        }
         public char GetOrientation()
         {
             return orientation;
@@ -49,7 +60,75 @@ namespace RedBadgerForms
 
         public void MoveRight()
         {
+            Point nextCoordinate;
+
             this.lastCoordinate = coordinates;
+            switch (orientation.ToString().ToUpper())
+            {
+                case "N": //works
+                    nextCoordinate = new Point(coordinates.X, coordinates.Y + 1);
+                    if (nextCoordinate.Y > Grid.gridElements.GetLength(1) - 1)
+                    {
+                        if (!Grid.gridElements[coordinates.X, coordinates.Y].GetHasScent())
+                        {
+                            ProcessLostRobot(coordinates.X, coordinates.Y);
+                            break;
+                        }
+                        break;
+                    }
+                    Grid.gridElements[nextCoordinate.X, nextCoordinate.Y].SetRobotInElement(this);
+                    Grid.gridElements[coordinates.X, coordinates.Y].BackgroundImage = null;
+                    this.SetCoordinates(nextCoordinate);
+                    break;
+
+                case "E": //works
+                    nextCoordinate = new Point(coordinates.X, coordinates.Y + 1);
+                    if (nextCoordinate.Y > Grid.gridElements.GetLength(1) - 1)
+                    {
+                        if (!Grid.gridElements[coordinates.X, coordinates.Y].GetHasScent())
+                        {
+                            ProcessLostRobot(coordinates.X, coordinates.Y);
+                            break;
+                        }
+                        break;
+                    }
+                    Grid.gridElements[nextCoordinate.X, nextCoordinate.Y].SetRobotInElement(this);
+                    Grid.gridElements[coordinates.X, coordinates.Y].BackgroundImage = null;
+                    this.SetCoordinates(nextCoordinate);
+                    break;
+
+                case "S":
+                    nextCoordinate = new Point(coordinates.X, coordinates.Y + 1);
+                    if (nextCoordinate.Y > Grid.gridElements.GetLength(1) - 1)
+                    {
+                        if (!Grid.gridElements[coordinates.X, coordinates.Y].GetHasScent())
+                        {
+                            ProcessLostRobot(coordinates.X, coordinates.Y);
+                            break;
+                        }
+                        break;
+                    }
+                    Grid.gridElements[nextCoordinate.X, nextCoordinate.Y].SetRobotInElement(this);
+                    Grid.gridElements[coordinates.X, coordinates.Y].BackgroundImage = null;
+                    this.SetCoordinates(nextCoordinate);
+                    break;
+
+                case "W":
+                    nextCoordinate = new Point(coordinates.X + 1, coordinates.Y);
+                    if (nextCoordinate.X > Grid.gridElements.GetLength(0) - 1)
+                    {
+                        if (!Grid.gridElements[coordinates.X, coordinates.Y].GetHasScent())
+                        {
+                            ProcessLostRobot(coordinates.X, coordinates.Y);
+                            break;
+                        }
+                        break;
+                    }
+                    Grid.gridElements[nextCoordinate.X, nextCoordinate.Y].SetRobotInElement(this);
+                    Grid.gridElements[coordinates.X, coordinates.Y].BackgroundImage = null;
+                    this.SetCoordinates(nextCoordinate);
+                    break;
+            }
         }
         public void MoveForward()
         {
@@ -101,7 +180,7 @@ namespace RedBadgerForms
                         }
                         break;
                     }
-                    Grid.gridElements[coordinates.X - 1, coordinates.Y].SetRobotInElement(this);
+                    Grid.gridElements[nextCoordinate.X, nextCoordinate.Y].SetRobotInElement(this);
                     Grid.gridElements[coordinates.X, coordinates.Y].BackgroundImage = null;
                     this.SetCoordinates(nextCoordinate);
                     break;
@@ -117,7 +196,7 @@ namespace RedBadgerForms
                         }
                         break;
                     }
-                    Grid.gridElements[coordinates.X, coordinates.Y - 1].SetRobotInElement(this);
+                    Grid.gridElements[nextCoordinate.X, nextCoordinate.Y].SetRobotInElement(this);
                     Grid.gridElements[coordinates.X, coordinates.Y].BackgroundImage = null;
                     this.SetCoordinates(nextCoordinate);
                     break;
@@ -128,6 +207,7 @@ namespace RedBadgerForms
             Grid.gridElements[x, y].BackgroundImage = null;
             Grid.gridElements[x, y].BackColor = Color.Green;
             Grid.gridElements[x, y].SetHasScent(true);
+            this.SetisLost(true);
         }
     }
 }

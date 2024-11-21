@@ -4,6 +4,10 @@
     {
         public static void ProcessCommand(string command, Robot robot)
         {
+            if (robot.GetIsLost())
+            {
+                return;
+            }
             for (int i = 0; i < command.Length; i++)
             {
                 switch(command[i].ToString().ToUpper()) {
