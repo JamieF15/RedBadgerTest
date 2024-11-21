@@ -1,39 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
-using System.Drawing;
-using System.Runtime.CompilerServices;
-
-namespace RedBadgerForms
+﻿namespace RedBadgerForms
 {
     internal class Grid
     {
+        public static GridElement[,] gridElements;
+
         public static void Initiate(int x, int y, Form form)
         {
-            int gridElementSize = 50;
+            gridElements = new GridElement[x, y];
+            int gridElementSize = 70;
             int startingXLocation = 0;
-            int startingYLocation = 500;
-            int currentXLocaiton = startingXLocation;
+            int startingYLocation = 800;
+            int currentXLocaiton;
             int currentYLocaiton = startingYLocation;
             
-            for (int i = 0; i < x; i++) // x = 5
+            for (int i = 0; i < x; i++)
             {
-        
                 currentYLocaiton -= gridElementSize;
                 currentXLocaiton = startingXLocation;
-                
-                for (int j = 0; j < y; j++) // x = 3
+
+                for (int j = 0; j < y; j++)
                 {
-                    GridElement gridElement = new GridElement(new Point(i, j));
-                    gridElement.Size = new Size(gridElementSize, gridElementSize);
-                    
-                    gridElement.BackColor = Color.Black;
+                    GridElement gridElement = new GridElement(new Point(i, j), new Size(gridElementSize, gridElementSize));
                     gridElement.Location = new Point(currentXLocaiton, currentYLocaiton);
+
                     form.Controls.Add(gridElement);
+
+                    gridElements[i, j] = gridElement;
                     currentXLocaiton += gridElementSize;
+
                 }
             }
         }
